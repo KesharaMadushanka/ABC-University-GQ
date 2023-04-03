@@ -58,7 +58,13 @@
 <div class="alert alert-danger" role="alert">
     User successfully Deleted!
 </div>
-<% } %>
+<% } else if ("true".equals(request.getParameter("editSuccess"))) { %>
+<div class="alert alert-primary" role="alert">
+    User successfully Updated!
+</div>
+<%
+    }
+%>
 
 <div class="card col-md-5">
     <table class="table table-dark">
@@ -85,15 +91,16 @@
             </td>
             <td><%= user.getPhone() %>
             </td>
-            <form method="post" action="">
+            <form method="post" action="editUserForm">
                 <td>
-                    <button type="submit" value="<%= user.getId() %>" class="btn btn-warning">Edit</button>
+                    <input type="hidden" name="userId" value="<%= user.getId() %>"/>
+                    <button type="submit" class="btn btn-warning">Edit</button>
                 </td>
             </form>
 
             <form method="post" action="deleteUserController">
                 <td>
-                    <input type="hidden" name="userId" value="<%= user.getId() %>" />
+                    <input type="hidden" name="userId" value="<%= user.getId() %>"/>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </td>
             </form>
