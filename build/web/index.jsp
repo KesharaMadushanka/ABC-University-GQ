@@ -12,8 +12,9 @@
         <script src="js/bootstrap.min.js"></script>
     
     </head>
+
     <body>
-        <h1>Welcome to The ABC_University_O</h1>
-        <a class="btn btn-primary" href="login.jsp" role="button">Login</a>
+        <h1>Welcome to The ABC University</h1>
+        <a class="btn btn-success" href="login.jsp" role="button">Login</a>
     </body>
 </html>
