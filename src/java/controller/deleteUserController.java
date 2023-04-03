@@ -40,7 +40,7 @@ public class deleteUserController extends HttpServlet {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }
 
-        response.sendRedirect(request.getContextPath() + "ViewUsers?success=true");
+        response.sendRedirect(request.getContextPath() + "/ViewUsers?success=true");
 
     }
 }

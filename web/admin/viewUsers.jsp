@@ -53,6 +53,12 @@
         </div>
     </div>
 </nav>
+<%--    display alert if success--%>
+<% if ("true".equals(request.getParameter("success"))) { %>
+<div class="alert alert-danger" role="alert">
+    User successfully Deleted!
+</div>
+<% } %>
 
 <div class="card col-md-5">
     <table class="table table-dark">
