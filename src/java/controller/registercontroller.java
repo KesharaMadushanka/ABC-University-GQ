@@ -6,6 +6,7 @@ package controller;
 
 import beans.DatabaseConnection;
 import beans.PasswordHasher;
+import beans.VerifyUnamePwd;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,6 @@ import java.io.PrintWriter;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,8 +27,6 @@ import java.util.logging.Logger;
 public class registercontroller extends HttpServlet {
 
     Connection con;
-    PreparedStatement pst;
-    ResultSet rs;
 
 
     @Override
@@ -44,27 +42,38 @@ public class registercontroller extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         Connection con;
+        String reply = null;
         try {
-            String hashedPassword = PasswordHasher.hashPassword(userPwd);
 
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            if (!VerifyUnamePwd.verifyUname(userName)) {
+                reply = " Username already exists. Please login !";
+            } else if (!VerifyUnamePwd.verifyUemail(userEmail)) {
+                reply = " User Email already exists. Please login";
+            } else {
 
-            pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)");
 
-            pst.setString(1, userName);
-            pst.setString(2, userEmail);
-            pst.setInt(3, Integer.parseInt(userPhone));
-            pst.setString(4, userNic);
-            pst.setString(5, hashedPassword);
-            pst.executeUpdate();
+                String hashedPassword = PasswordHasher.hashPassword(userPwd);
+                con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+                String insertQuery = "INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)";
+                PreparedStatement pst = con.prepareStatement(insertQuery);
 
+
+                pst.setString(1, userName);
+                pst.setString(2, userEmail);
+                pst.setInt(3, Integer.parseInt(userPhone));
+                pst.setString(4, userNic);
+                pst.setString(5, hashedPassword);
+                pst.executeUpdate();
+
+                reply = " Successfully registered. Please login !";
+
+            }
         } catch (NoSuchAlgorithmException | SQLException ex) {
             Logger.getLogger(registercontroller.class.getName()).log(Level.SEVERE, null, ex);
             out.println("<h1> Somthing Went Wrong !!! </h1>");
         }
-        //        out.println("<h1> Success !</h1>");
-//        response.sendRedirect("login.jsp");
-        request.setAttribute("Message", "Hello " + userName + " Your registration is successfull. " + "Now you can loggin to the system");
+
+        request.setAttribute("Message", "Hello " + userName + reply);
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
