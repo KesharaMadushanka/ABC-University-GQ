@@ -17,7 +17,12 @@
     <div class="alert alert-success" role="alert">
         User successfully added!
     </div>
-    <% } %>
+    <% } else if ("false".equals(request.getParameter("success"))) { %>
+    <div class="alert alert-danger" role="alert">
+        Error!
+    </div>
+    <%
+        } %>
 
     <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
         <div class="card-header">

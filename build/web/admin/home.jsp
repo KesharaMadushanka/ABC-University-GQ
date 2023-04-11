@@ -24,6 +24,8 @@
 %>
 <body>
 <%@ include file="../layout/adminNavbar.jsp" %>
+
+<%--view user card--%>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
@@ -33,5 +35,18 @@
         </form>
     </div>
 </div>
+
+<%--view subjects card--%>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text"></p>
+        <form action="../ViewDegree" method="get">
+            <button class="btn btn-primary">View Degrees</button>
+        </form>
+    </div>
+</div>
+
+
 </body>
 </html>

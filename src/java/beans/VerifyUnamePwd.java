@@ -17,11 +17,7 @@ public class VerifyUnamePwd {
         ResultSet rs = unameStatement.executeQuery();
         if (rs.next()) {
             int count = rs.getInt(1);
-            if (count > 0) {
-                return false;
-            } else {
-                return true;
-            }
+            return count == 0;
         }
         return false;
     }
@@ -37,11 +33,7 @@ public class VerifyUnamePwd {
         ResultSet rs = uemailStatement.executeQuery();
         if (rs.next()) {
             int count = rs.getInt(1);
-            if (count > 0) {
-                return false;
-            } else {
-                return true;
-            }
+            return count == 0;
         }
         return false;
     }

@@ -21,7 +21,7 @@
                 <div class="form-group mt-2">
                     <label for="userId">User ID</label>
                     <input type="text" name="userId" id="userId" placeholder="Enter Your ID" class="form-control"
-                           required="" value="${userId}">
+                           required="" readonly value="${userId}">
                 </div>
                 <div class="form-group mt-2">
                     <label for="userName">Enter Your Name</label>
@@ -45,7 +45,7 @@
                 <div class="form-group mt-2">
                     <input type="submit" value="Update User" name="btnSave" id="btnSave" class="btn btn-success btn-sm">
                     <input type="reset" class="btn btn-warning btn-sm">
-                    <a href="home.jsp" class="btn btn-danger">Back</a>
+                    <a href="admin/viewUser.jsp" class="btn btn-danger btn-sm">Back</a>
                 </div>
             </form>
         </div>
