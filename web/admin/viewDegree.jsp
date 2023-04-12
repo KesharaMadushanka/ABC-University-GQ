@@ -7,6 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <title>View Degrees</title>
+    <!-- Link bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Link jquery and Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <h1>View Degrees</h1>
@@ -33,6 +38,13 @@
         </td>
         <td><%=degree.getDegreeDescription() %>
         </td>
+        <form method="post" action="ViewSubject">
+            <td>
+                <input type="hidden" name="degreeCode" value="<%= degree.getDegreeCode() %>"/>
+                <input type="hidden" name="degreeName" value="<%= degree.getDegreeName() %>"/>
+                <button type="submit" class="btn btn-primary">View Subjects</button>
+            </td>
+        </form>
 
         <% } %>
     </tr>
