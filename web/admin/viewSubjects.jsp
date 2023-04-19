@@ -36,8 +36,8 @@
         <th>Subject Code</th>
         <th>Subject Name</th>
         <th>Subject Credits</th>
-        <th>Subject Description</th>
         <th>Delete Subject from the degree</th>
+        <th>More Details</th>
 
     </tr>
     </thead>
@@ -50,16 +50,57 @@
         </td>
         <td><%=subject.getSubjectCredits() %>
         </td>
-        <td><%=subject.getSubjectDescription() %>
-        </td>
         <form method="get" action="DeleteSubject">
             <td>
                 <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
                 <input type="hidden" name="degreeCode" value="${degreeCode}"/>
-                <button type="submit" class="btn btn-outline-danger">Delete Subject "<%= subject.getSubjectName() %> from ${degreeName}"</button>
+                <button type="submit" class="btn btn-outline-danger">Delete Subject "<%= subject.getSubjectName() %>
+                    from ${degreeName}"
+                </button>
             </td>
         </form>
-        <% } %>
+        <td>
+            <%--            <!-- Button trigger modal -->--%>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupModal">
+                More Details
+            </button>
+            <%--            <!-- Modal -->--%>
+            <%--            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--%>
+            <%--                <div class="modal-dialog modal-dialog-centered" role="document">--%>
+            <%--                    <div class="modal-content">--%>
+            <%--                        <div class="modal-header">--%>
+            <%--                            <h5 class="modal-title" id="exampleModalLongTitle">Details of <%=subject.getSubjectName() %></h5>--%>
+            <%--                        </div>--%>
+            <%--                        <div class="modal-body">--%>
+            <%--                            <%=subject.getSubjectDescription() %>--%>
+            <%--                        </div>--%>
+            <%--                        <div class="modal-footer">--%>
+            <%--                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>--%>
+            <%--                        </div>--%>
+            <%--                    </div>--%>
+            <%--                </div>--%>
+            <%--            </div>--%>
+            <%--        </td>--%>
+
+            <!-- Modal -->
+
+
+            <div class="modal" id="popupModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" style="color: #1c1f23"> Details of Subject: <%=subject.getSubjectName() %> </h4>
+                        </div>
+                        <div class="modal-body" style="color: #1c1f23">
+                            <p> <%=subject.getSubjectDescription() %> </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <% } %>
     </tr>
     </tbody>
 </table>

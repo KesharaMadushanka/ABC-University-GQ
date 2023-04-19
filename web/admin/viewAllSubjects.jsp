@@ -21,10 +21,10 @@
     Subject successfully Deleted!
 </div>
 
-<%--<% } else if ("true".equals(request.getParameter("editSuccess"))) { %>--%>
-<%--<div class="alert alert-primary" role="alert">--%>
-<%--    User successfully Updated!--%>
-<%--</div>--%>
+<% } else if ("true".equals(request.getParameter("editSuccess"))) { %>
+<div class="alert alert-primary" role="alert">
+    Subject successfully Updated!
+</div>
 <%
     }
 %>
@@ -36,8 +36,8 @@
         <th>Subject Name</th>
         <th>Subject Credits</th>
         <th>Subject Description</th>
-        <th>Delete Subject from the degree</th>
-
+        <th>Delete Subject</th>
+        <th>Edit Subject</th>
     </tr>
     </thead>
     <tbody>
@@ -54,7 +54,13 @@
         <form method="get" action="DeleteSubject">
             <td>
                 <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
-                <button type="submit" class="btn btn-outline-danger">Delete Subject <%= subject.getSubjectName() %></button>
+                <button type="submit" class="btn btn-danger">Delete Subject <%= subject.getSubjectName() %></button>
+            </td>
+        </form>
+        <form method="post" action="EditSubjectForm">
+            <td>
+                <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
+                <button type="submit" class="btn btn-warning">Edit Subject </button>
             </td>
         </form>
 

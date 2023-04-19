@@ -30,7 +30,8 @@ public class ViewSubjectController extends HttpServlet {
 
         try {
             conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
-            String subSql = "SELECT * FROM subject WHERE degree_code = ?";
+            String subSql = "SELECT * FROM subject JOIN degree_subject ON subject.subject_code = degree_subject.subject_code " +
+                    "WHERE degree_subject.degree_code = ?; ";
 
             //execute view subject query
             pst = conn.prepareStatement(subSql);
@@ -42,8 +43,8 @@ public class ViewSubjectController extends HttpServlet {
                 Subject subject = new Subject();
                 subject.setSubjectCode(rs.getString("subject_code"));
                 subject.setSubjectName(rs.getString("subject_name"));
-                subject.setSubjectDescription(rs.getString("subject_description"));
                 subject.setSubjectCredits(rs.getInt("subject_credits"));
+                subject.setSubjectDescription(rs.getString("subject_description"));
                 subjects.add(subject);
 
             }
