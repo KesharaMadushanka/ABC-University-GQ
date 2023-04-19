@@ -15,13 +15,30 @@
 </head>
 <body>
 <h1>Subjects Belongs to ${degreeName}</h1>
-<table>
+
+<% if ("true".equals(request.getParameter("subDel"))) { %>
+<div class="alert alert-danger" role="alert">
+    Subject successfully Deleted!
+</div>
+
+<%--<% } else if ("true".equals(request.getParameter("editSuccess"))) { %>--%>
+<%--<div class="alert alert-primary" role="alert">--%>
+<%--    User successfully Updated!--%>
+<%--</div>--%>
+<%
+    }
+%>
+
+
+<table class="table table-dark">
     <thead>
     <tr>
         <th>Subject Code</th>
         <th>Subject Name</th>
         <th>Subject Credits</th>
         <th>Subject Description</th>
+        <th>Delete Subject from the degree</th>
+
     </tr>
     </thead>
     <tbody>
@@ -35,6 +52,13 @@
         </td>
         <td><%=subject.getSubjectDescription() %>
         </td>
+        <form method="get" action="DeleteSubject">
+            <td>
+                <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
+                <input type="hidden" name="degreeCode" value="${degreeCode}"/>
+                <button type="submit" class="btn btn-outline-danger">Delete Subject "<%= subject.getSubjectName() %> from ${degreeName}"</button>
+            </td>
+        </form>
         <% } %>
     </tr>
     </tbody>

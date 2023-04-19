@@ -24,6 +24,10 @@
 <div class="alert alert-primary" role="alert">
     User successfully Updated!
 </div>
+<% } else if ("true".equals(request.getParameter("subDelFromDeg"))) { %>
+<div class="alert alert-warning" role="alert">
+    Subject deleted from the degree!
+</div>
 <%
     }
 %>
@@ -56,7 +60,8 @@
             <td>
                 <input type="hidden" name="degreeCode" value="<%= degree.getDegreeCode() %>"/>
                 <input type="hidden" name="degreeName" value="<%= degree.getDegreeName() %>"/>
-                <button type="submit" class="btn btn-primary">View Subjects Brlongs to <%= degree.getDegreeName() %></button>
+                <button type="submit" class="btn btn-primary">View Subjects Brlongs to <%= degree.getDegreeName() %>
+                </button>
             </td>
         </form>
         <form method="post" action="editDegreeForm">

@@ -36,13 +36,24 @@
     </div>
 </div>
 
-<%--view subjects card--%>
+<%--view degress card--%>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <p class="card-text"></p>
         <form action="../ViewDegree" method="get">
             <button class="btn btn-primary">View Degrees</button>
+        </form>
+    </div>
+</div>
+
+<%--view subjects card--%>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text"></p>
+        <form action="../ViewAllSubject" method="get">
+            <button class="btn btn-primary">View Subjects</button>
         </form>
     </div>
 </div>

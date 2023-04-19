@@ -49,6 +49,7 @@ public class ViewSubjectController extends HttpServlet {
             }
             req.setAttribute("subjects", subjects);
             req.setAttribute("degreeName", degreeName);
+            req.setAttribute("degreeCode", degreeCode);
             RequestDispatcher dispatcher = req.getRequestDispatcher("admin/viewSubjects.jsp");
             dispatcher.forward(req, resp);
 

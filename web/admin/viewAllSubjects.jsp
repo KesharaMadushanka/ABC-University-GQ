@@ -14,7 +14,7 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Subjects Belongs to ${degreeName}</h1>
+<h1>Subjects</h1>
 
 <% if ("true".equals(request.getParameter("subDel"))) { %>
 <div class="alert alert-danger" role="alert">
@@ -28,7 +28,6 @@
 <%
     }
 %>
-
 
 <table class="table table-dark">
     <thead>
@@ -55,10 +54,10 @@
         <form method="get" action="DeleteSubject">
             <td>
                 <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
-                <input type="hidden" name="degreeCode" value="${degreeCode}"/>
-                <button type="submit" class="btn btn-outline-danger">Delete Subject "<%= subject.getSubjectName() %> from ${degreeName}"</button>
+                <button type="submit" class="btn btn-outline-danger">Delete Subject <%= subject.getSubjectName() %></button>
             </td>
         </form>
+
         <% } %>
     </tr>
     </tbody>
