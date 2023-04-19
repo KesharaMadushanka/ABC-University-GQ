@@ -13,7 +13,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                 <a class="nav-link" href="addUser.jsp">Add User</a>
                 <a class="nav-link" href="addDegree.jsp">Add Degree</a>
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="addSubject.jsp">Add Subject</a>
             </div>
         </div>
     </div>
