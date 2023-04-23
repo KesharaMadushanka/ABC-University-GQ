@@ -56,7 +56,7 @@
         </td>
         <td><%=degree.getDegreeDescription() %>
         </td>
-        <form method="post" action="ViewSubject">
+        <form method="get" action="ViewSubject">
             <td>
                 <input type="hidden" name="degreeCode" value="<%= degree.getDegreeCode() %>"/>
                 <input type="hidden" name="degreeName" value="<%= degree.getDegreeName() %>"/>

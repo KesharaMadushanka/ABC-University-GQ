@@ -26,7 +26,7 @@ public class DeleteSubjectController extends HttpServlet {
 
         String subjectCode = request.getParameter("subjectCode");
         degreeCode = request.getParameter("degreeCode");
-
+        String degreeName = request.getParameter("degreeName");
 
         try {
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
@@ -37,7 +37,7 @@ public class DeleteSubjectController extends HttpServlet {
                 pst.setString(2, degreeCode);
                 pst.executeUpdate();
 
-                response.sendRedirect(request.getContextPath() + "/ViewDegree?subDelFromDeg=true");
+                response.sendRedirect(request.getContextPath() + "/ViewSubject?subDelFromDeg=true&degreeCode=" + degreeCode + "&degreeName=" + degreeName);
             } else {
                 pst = con.prepareStatement("DELETE FROM subject WHERE subject_code = ?");
                 pst.setString(1, subjectCode);

@@ -16,6 +16,14 @@
 <body>
 <h1>Subjects Belongs to ${degreeName}</h1>
 
+<form action="AddSubjectToDegree" method="get">
+    <input type="hidden" name="degreeCode" value="${degreeCode}"/>
+    <input type="hidden" name="degreeName" value="${degreeName}"/>
+    <button type="submit" class="btn btn-primary">Add New Subject to ${degreeName}</button>
+</form>
+
+
+
 <% if ("true".equals(request.getParameter("subDel"))) { %>
 <div class="alert alert-danger" role="alert">
     Subject successfully Deleted!
@@ -54,6 +62,7 @@
             <td>
                 <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
                 <input type="hidden" name="degreeCode" value="${degreeCode}"/>
+                <input type="hidden" name="degreeName" value="${degreeName}"/>
                 <button type="submit" class="btn btn-outline-danger">Delete Subject "<%= subject.getSubjectName() %>
                     from ${degreeName}"
                 </button>
@@ -64,27 +73,6 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupModal">
                 More Details
             </button>
-            <%--            <!-- Modal -->--%>
-            <%--            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--%>
-            <%--                <div class="modal-dialog modal-dialog-centered" role="document">--%>
-            <%--                    <div class="modal-content">--%>
-            <%--                        <div class="modal-header">--%>
-            <%--                            <h5 class="modal-title" id="exampleModalLongTitle">Details of <%=subject.getSubjectName() %></h5>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="modal-body">--%>
-            <%--                            <%=subject.getSubjectDescription() %>--%>
-            <%--                        </div>--%>
-            <%--                        <div class="modal-footer">--%>
-            <%--                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>--%>
-            <%--                        </div>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-            <%--        </td>--%>
-
-            <!-- Modal -->
-
-
             <div class="modal" id="popupModal">
                 <div class="modal-dialog">
                     <div class="modal-content">

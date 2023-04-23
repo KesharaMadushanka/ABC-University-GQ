@@ -21,7 +21,7 @@ import java.util.List;
 public class ViewSubjectController extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String degreeCode = req.getParameter("degreeCode");
         String degreeName = req.getParameter("degreeName");
 
