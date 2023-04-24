@@ -57,7 +57,16 @@
         </form>
     </div>
 </div>
-
+<%--view Users card--%>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text"></p>
+        <form action="../ViewStudents" method="get">
+            <button class="btn btn-primary">View Students</button>
+        </form>
+    </div>
+</div>
 
 
 </body>
