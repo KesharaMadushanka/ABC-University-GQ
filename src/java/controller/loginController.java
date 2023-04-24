@@ -60,11 +60,11 @@ public class loginController extends HttpServlet {
                     session.setAttribute("UN", uname);
                     request.setAttribute("message", "Hello " + uname);
                     response.sendRedirect("admin/home.jsp");
-                } else if (Objects.equals(UserAuthorization.authorizeUser(uname), "student")) {
+                } else if (Objects.equals(UserAuthorization.authorizeUser(uname), "user")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
                     request.setAttribute("message", "Hello " + uname);
-                    response.sendRedirect("student/studentHome.jsp");
+                    response.sendRedirect("user/userHome.jsp");
                 }
 
 

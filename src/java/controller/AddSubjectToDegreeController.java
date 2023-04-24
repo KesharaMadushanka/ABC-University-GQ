@@ -35,9 +35,9 @@ public class AddSubjectToDegreeController extends HttpServlet {
             e.printStackTrace();
         }
 
-        String sql = "SELECT * FROM subject WHERE NOT EXISTS (" +
-                "SELECT 1 FROM degree_subject " +
-                "WHERE degree_subject.subject_code = subject.subject_code);";
+        String sql = "SELECT * FROM subject WHERE subject_code " +
+                "NOT IN (SELECT subject_code FROM degree_subject " +
+                "WHERE degree_code = ?)";
 
         String subSql = "SELECT * FROM subject JOIN degree_subject ON subject.subject_code = degree_subject.subject_code " +
                 "WHERE degree_subject.degree_code = ?; ";
@@ -47,6 +47,7 @@ public class AddSubjectToDegreeController extends HttpServlet {
             assert conn != null;
             pst1 = conn.prepareStatement(sql);
             pst2 = conn.prepareStatement(subSql);
+            pst1.setString(1,degreeCode);
             pst2.setString(1, degreeCode);
         } catch (SQLException ex) {
             ex.printStackTrace();

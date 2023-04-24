@@ -25,7 +25,7 @@ public class UserAuthorization {
                 }
                 //check if user is a student
                 else if (Objects.equals(userRole, "user")) {
-                    return "student";
+                    return "user";
                 }
             } else {
                 //no role assigned
