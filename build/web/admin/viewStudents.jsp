@@ -74,14 +74,14 @@
             </td>
             <td><%= student.getPhone() %>
             </td>
-            <form method="post" action="editStudentForm">
+            <form method="post" action="EditStudentForm">
                 <td>
                     <input type="hidden" name="studentId" value="<%= student.getId() %>"/>
                     <button type="submit" class="btn btn-warning">Edit</button>
                 </td>
             </form>
 
-            <form method="post" action="deleteStudentController">
+            <form method="get" action="DeleteStudent">
                 <td>
                     <input type="hidden" name="studentId" value="<%= student.getId() %>"/>
                     <button type="submit" class="btn btn-danger">Delete</button>
