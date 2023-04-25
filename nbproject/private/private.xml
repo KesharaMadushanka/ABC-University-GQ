@@ -3,13 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/web/index.jsp</file>
-            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/beans/PasswordHasher.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/AddSubjectToDegreeController.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/AddStudentToSubjectController.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/ViewUsersController.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/web/logout.jsp</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/AddStudentController.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/ViewEnrolledStudentsController.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/web/index.jsp</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/beans/PasswordHasher.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/SubmitSubjectToDegreeController.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/registercontroller.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/beans/UserAuthorization.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/loginController.java</file>
+            <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/controller/DeleteStudentFromSubjectController.java</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/web/login.jsp</file>
             <file>file:/D:/SIBA/Semester%2005/IT%20255%20Advanced%20Programming%20With%20Java%20II/ABC_University_O/ABC_University_O/src/java/beans/DatabaseConnection.java</file>
         </group>

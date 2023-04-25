@@ -8,6 +8,7 @@ public class Student {
     private String email;
     private String nic;
     private String phone;
+    private String grade;
 
 
     public int getId() {
@@ -56,5 +57,13 @@ public class Student {
 
     public void setNumber(String number) {
         Number = number;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 }

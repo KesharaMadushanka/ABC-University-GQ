@@ -6,15 +6,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%--<%--%>
-<%--    // Establish a database connection--%>
-<%--    Connection con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");--%>
-<%--    // Create a statement object--%>
-<%--    PreparedStatement pst = con.prepareStatement("SELECT * FROM students");--%>
-
-<%--    // Execute the SQL query and store the result in a ResultSet--%>
-<%--    ResultSet rs = pst.executeQuery();--%>
-<%--%>--%>
 
 
 <!DOCTYPE html>

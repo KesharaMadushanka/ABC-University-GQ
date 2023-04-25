@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/web/admin/addNewSubjectsToDegree.jsp" value="file://$PROJECT_DIR$/web/admin" />
+        <entry key="file://$PROJECT_DIR$/web/user/studentGrade.jsp" value="file://$PROJECT_DIR$/web/user" />
       </map>
     </option>
   </component>

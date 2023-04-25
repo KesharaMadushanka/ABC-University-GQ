@@ -37,6 +37,7 @@
         <th>Subject Credits</th>
         <th>Subject Description</th>
         <th>View / Remove Enrolled Students</th>
+        <th>Grade</th>
 
     </tr>
     </thead>
@@ -55,6 +56,12 @@
             <td>
                 <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
                 <button type="submit" class="btn btn-danger">View / Remove Enrolled Students</button>
+            </td>
+        </form>
+        <form method="get" action="StudentGrade">
+            <td>
+                <input type="hidden" name="subjectCode" value="<%= subject.getSubjectCode() %>"/>
+                <button type="submit" class="btn btn-primary">Grade Students in <%= subject.getSubjectCode() %></button>
             </td>
         </form>
 
