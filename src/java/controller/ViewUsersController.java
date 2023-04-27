@@ -1,7 +1,7 @@
 package controller;
 
-import beans.DatabaseConnection;
-import model.User;
+import util.DatabaseConnection;
+import bean.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

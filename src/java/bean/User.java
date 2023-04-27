@@ -1,14 +1,11 @@
-package model;
+package bean;
 
-public class Student {
+public class User {
     private int id;
-
-    private String Number;
     private String name;
     private String email;
     private String nic;
     private String phone;
-    private String grade;
 
 
     public int getId() {
@@ -49,21 +46,5 @@ public class Student {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getNumber() {
-        return Number;
-    }
-
-    public void setNumber(String number) {
-        Number = number;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
     }
 }

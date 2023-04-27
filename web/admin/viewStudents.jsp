@@ -1,4 +1,4 @@
-<%@ page import="model.Student" %>
+<%@ page import="bean.Student" %>
 <%@ page import="java.util.List" %><%--
     Document   : home
     Created on : Mar 9, 2023, 10:27:53 AM

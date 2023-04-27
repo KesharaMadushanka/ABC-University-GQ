@@ -13,8 +13,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.util.List" %>
-<%@ page import="model.Student" %>
-<%@ page import="beans.CheckGrade" %>
+<%@ page import="bean.Student" %>
+<%@ page import="util.CheckGrade" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -153,12 +153,6 @@
 
                     </label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <label>
-                        <input class="form-check-input" type="radio" name="<%=student.getNumber() %>" value="F"> F
-                    </label>
-                </div>
-
                 </fieldset>
             </td>
         </tr>

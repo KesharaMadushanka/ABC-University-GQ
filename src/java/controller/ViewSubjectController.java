@@ -1,7 +1,7 @@
 package controller;
 
-import beans.DatabaseConnection;
-import model.Subject;
+import util.DatabaseConnection;
+import bean.Subject;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

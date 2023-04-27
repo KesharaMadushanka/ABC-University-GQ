@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="ABC_University_O" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/mysql-connector-java-8.0.20.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/mysql-connector-java-5.1.44-bin.jar" />
+        </element>
       </element>
     </root>
   </artifact>

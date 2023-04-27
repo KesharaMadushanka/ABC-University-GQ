@@ -1,8 +1,8 @@
 
 package controller;
 
-import beans.DatabaseConnection;
-import beans.PasswordHasher;
+import util.DatabaseConnection;
+import util.PasswordHasher;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

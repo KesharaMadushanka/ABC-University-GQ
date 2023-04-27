@@ -1,8 +1,8 @@
 package controller;
 
-import beans.DatabaseConnection;
-import beans.UserAuthorization;
-import model.Subject;
+import util.DatabaseConnection;
+import util.UserAuthorization;
+import bean.Subject;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

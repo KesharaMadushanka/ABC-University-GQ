@@ -4,9 +4,9 @@
  */
 package controller;
 
-import beans.DatabaseConnection;
-import beans.PasswordHasher;
-import beans.VerifyUnamePwd;
+import util.DatabaseConnection;
+import util.PasswordHasher;
+import util.VerifyUnamePwd;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

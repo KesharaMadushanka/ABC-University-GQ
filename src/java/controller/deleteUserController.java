@@ -1,7 +1,7 @@
 
 package controller;
 
-import beans.DatabaseConnection;
+import util.DatabaseConnection;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

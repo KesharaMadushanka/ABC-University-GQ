@@ -1,4 +1,4 @@
-package model;
+package bean;
 
 public class Subject {
     private String subjectCode;

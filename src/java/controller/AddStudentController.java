@@ -1,6 +1,6 @@
 package controller;
 
-import beans.DatabaseConnection;
+import util.DatabaseConnection;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -25,6 +25,7 @@ public class AddStudentController extends HttpServlet {
 
         try {
             conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            //insert data into student table
             pst = conn.prepareStatement("INSERT INTO student(student_name,student_email,student_phone,student_nic) VALUES (?,?,?,?)");
             pst.setString(1,studentName);
             pst.setString(2,studentEmail);

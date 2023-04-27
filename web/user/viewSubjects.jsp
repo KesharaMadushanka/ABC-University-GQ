@@ -5,9 +5,9 @@
   Time: 2:48 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="model.Subject" %>
+<%@ page import="bean.Subject" %>
 <%@ page import="java.util.List" %>
-<%@ page import="model.Student" %>
+<%@ page import="bean.Student" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">

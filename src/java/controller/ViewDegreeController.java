@@ -1,7 +1,7 @@
 package controller;
 
-import beans.DatabaseConnection;
-import model.Degree;
+import util.DatabaseConnection;
+import bean.Degree;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
