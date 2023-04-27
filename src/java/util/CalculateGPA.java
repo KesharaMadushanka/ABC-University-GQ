@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 import static java.lang.Double.isNaN;
 
@@ -36,7 +37,11 @@ public class CalculateGPA {
         if (isNaN(gradePointValue)){
             return 0;
         }
-        return (gradePointValue / totalCredits);
+
+        double gpa = (gradePointValue / totalCredits);
+        DecimalFormat df = new DecimalFormat("#.##");
+        return Double.parseDouble(df.format(gpa));
+
     }
 
     public static int getTotalCredits(String studentNumber) {

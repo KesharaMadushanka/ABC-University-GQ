@@ -41,5 +41,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="pdfbox-3.0.0-alpha3" level="project" />
   </component>
 </module>

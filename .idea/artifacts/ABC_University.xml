@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ABC_University">
+    <output-path>$PROJECT_DIR$/out/artifacts/ABC_University</output-path>
+    <root id="archive" name="ABC_University.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/mysql-connector-java-5.1.44-bin.jar" />
+          <element id="library" level="project" name="pdfbox-3.0.0-alpha3" />
+          <element id="file-copy" path="$PROJECT_DIR$/mysql-connector-java-8.0.20.jar" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="module-output" name="ABC_University_O" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ABC_University_O/web/Web" />
+    </root>
+  </artifact>
+</component>

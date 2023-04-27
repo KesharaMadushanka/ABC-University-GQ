@@ -74,7 +74,6 @@ public class SubmitGradeController extends HttpServlet {
                         int totalCredits = CalculateGPA.getTotalCredits(paramName);
                         //calculate the GPA
                         double gpa = CalculateGPA.getGPA(totalCredits, gradePointValue);
-                        System.out.println(gpa);
                         if (!isNaN(gpa)){
                             //save GPA in the db
                             gpaSt = conn.prepareStatement("UPDATE student_gpa SET gpa = ? WHERE student_number = ?");
