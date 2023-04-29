@@ -153,12 +153,6 @@
 
                     </label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <label>
-                        <input class="form-check-input" type="radio" name="<%=student.getNumber() %>" value="F"> F
-                    </label>
-                </div>
-
                 </fieldset>
             </td>
         </tr>
