@@ -9,6 +9,6 @@
 <%
    if(session.getAttribute("UN")!= null){
         session.invalidate();
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("index.jsp");
     }
 %>

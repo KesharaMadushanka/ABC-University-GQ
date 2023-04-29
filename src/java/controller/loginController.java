@@ -70,7 +70,7 @@ public class loginController extends HttpServlet {
 
             } else {
                 request.setAttribute("Message", "Hello " + " Error. ");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
 
         } catch (NoSuchAlgorithmException | SQLException ex) {

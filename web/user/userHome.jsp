@@ -87,6 +87,17 @@
         </form>
     </div>
 </div>
+<%--add stdents to subject card--%>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <form class="form-inline my-2 my-lg-0" method="post" action="../StudentSemResult">
+            <input class="form-control mr-sm-2" type="search" placeholder="Enter Student Number" aria-label="Search"
+                   name="studentNumber">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
