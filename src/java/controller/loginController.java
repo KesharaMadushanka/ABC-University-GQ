@@ -69,7 +69,7 @@ public class loginController extends HttpServlet {
 
 
             } else {
-                request.setAttribute("Message", "Hello " + " Error. ");
+                request.setAttribute("Message", "error");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
 
