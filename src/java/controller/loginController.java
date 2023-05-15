@@ -59,7 +59,7 @@ public class loginController extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
                     request.setAttribute("message", "Hello " + uname);
-                    response.sendRedirect("admin/home.jsp");
+                    response.sendRedirect("admin/admin.jsp");
                 } else if (Objects.equals(UserAuthorization.authorizeUser(uname), "user")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
