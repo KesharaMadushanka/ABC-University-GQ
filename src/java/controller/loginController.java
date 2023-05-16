@@ -54,12 +54,13 @@ public class loginController extends HttpServlet {
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
-                //authorize user privileges
+                //authorize admin privileges
                 if (Objects.equals(UserAuthorization.authorizeUser(uname), "admin")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
                     request.setAttribute("message", "Hello " + uname);
                     response.sendRedirect("admin/admin.jsp");
+                    //authorize user privileges
                 } else if (Objects.equals(UserAuthorization.authorizeUser(uname), "user")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);

@@ -10,8 +10,15 @@
     <!-- Link jquery and Javascript -->
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+
 </head>
+<%
+    if (session.getAttribute("UN") == null) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <body>
+<%@ include file="../layout/adminNavbar.jsp" %>
 <div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;">
 
     <%--    display alert if success--%>
@@ -54,13 +61,12 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="degree_description">Enter Degree Description</label>
-                    <textarea name="degree_description" id="degree_description" placeholder="Enter Degree Description"
-                              class="form-control"> </textarea>
+                    <textarea name="degree_description" id="degree_description" placeholder="Enter Degree Description" class="form-control"></textarea>
                 </div>
                 <div class="form-group mt-2">
-                    <input type="submit" value="Add Degree" name="btnSave" id="btnSave" class="btn btn-success btn-sm">
-                    <input type="reset" class="btn btn-warning btn-sm">
-                    <a href="home.jsp" class="btn btn-danger btn-sm">Back</a>
+                    <input type="submit" value="Add Degree" name="btnSave" id="btnSave" class="btn btn-success">
+                    <input type="reset" class="btn btn-warning">
+                    <a href="home.jsp" class="btn btn-danger">Back</a>
                 </div>
 
 
