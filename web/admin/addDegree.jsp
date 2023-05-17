@@ -1,5 +1,3 @@
-<%--degree_code 	degree_name 	degree_description 	degree_duration 	degree_credits--%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +17,7 @@
 %>
 <body>
 <%@ include file="../layout/adminNavbar.jsp" %>
-<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;">
+<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
 
     <%--    display alert if success--%>
     <% if ("true".equals(request.getParameter("success"))) { %>

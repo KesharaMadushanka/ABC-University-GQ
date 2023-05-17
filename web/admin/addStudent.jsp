@@ -16,9 +16,14 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
+<%
+    if (session.getAttribute("UN") == null) {
+        response.sendRedirect("../index.jsp");
+    }
+%>
 <body>
-
-<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;">
+<%@ include file="../layout/adminNavbar.jsp" %>
+<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
 
     <%--    display alert if success--%>
     <% if ("true".equals(request.getParameter("success"))) { %>
@@ -58,9 +63,9 @@
                     <input type="text" name="studentNic" id="studentNic" placeholder="Enter Your NIC" class="form-control">
                 </div>
                 <div class="form-group mt-2">
-                    <input type="submit" value="Add User" name="btnSave" id="btnSave" class="btn btn-success btn-sm">
-                    <input type="reset" class="btn btn-warning btn-sm">
-                    <a href="home.jsp" class="btn btn-danger">Back</a>
+                    <input type="submit" value="Add User" name="btnSave" id="btnSave" class="btn btn-success">
+                    <input type="reset" class="btn btn-warning">
+                    <a href="admin.jsp" class="btn btn-danger">Back</a>
                 </div>
             </form>
         </div>

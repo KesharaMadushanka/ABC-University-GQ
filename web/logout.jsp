@@ -1,14 +1,24 @@
-<%-- 
-    Document   : logout
-    Created on : Mar 9, 2023, 10:48:05 AM
-    Author     : MADUSHIKA
+<%--
+  Created by IntelliJ IDEA.
+  User: Keshara
+  Date: 5/15/2023
+  Time: 11:42 PM
+  To change this template use File | Settings | File Templates.
 --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page session="true" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%
-   if(session.getAttribute("UN")!= null){
-        session.invalidate();
+    if (session.getAttribute("UN") == null) {
         response.sendRedirect("index.jsp");
     }
 %>
+
+<%
+    // Invalidate session
+    session.invalidate();
+
+    // Redirect to login page
+    response.sendRedirect("index.jsp");
+%>
+

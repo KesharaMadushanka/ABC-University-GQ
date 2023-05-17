@@ -12,6 +12,7 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/adminNavbar.jsp" %>
 <div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;">
 
     <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">

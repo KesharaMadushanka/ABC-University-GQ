@@ -12,6 +12,7 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/adminNavbar.jsp" %>
 <%--    display alert if success--%>
 <% if ("true".equals(request.getParameter("success"))) { %>
 <div class="alert alert-success" role="alert">

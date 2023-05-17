@@ -3258,11 +3258,11 @@ fieldset:disabled .btn {
   box-shadow: 0 0 0 0.25rem rgba(217, 60, 60, 0.5);
 }
 
-.btn-danger:disabled, .btn-danger.disabled {
-  color: #000;
-  background-color: #ff4747;
-  border-color: #ff4747;
-}
+/*.btn-danger:disabled, .btn-danger.disabled {*/
+/*  color: #000;*/
+/*  background-color: #ff4747;*/
+/*  border-color: #ff4747;*/
+/*}*/
 
 .btn-light {
   color: #000;

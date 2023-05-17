@@ -35,7 +35,7 @@
         </div>
 
         <div class="d-flex align-items">
-            <a href="logout.jsp" class="nav-link">
+            <a href="../logout.jsp" class="nav-link">
                 <i style="color: #56595A" class="fa fa-sign-out-alt"> Logout
                 </i>
             </a>
