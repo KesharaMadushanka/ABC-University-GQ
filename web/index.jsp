@@ -53,6 +53,11 @@
                     </div>
                     <br>
                     <%--    display alert if success--%>
+                    <% if ("true".equals(request.getParameter("restrict"))) { %>
+                    <div class="alert alert-danger" role="alert">
+                    Access Restricted! Please Login Again
+                    </div>
+                    <%}%>
                     <% if (request.getAttribute("Message") != null) {
                         if (request.getAttribute("success").equals(true)) {%>
                     <div class="alert alert-success" role="alert">

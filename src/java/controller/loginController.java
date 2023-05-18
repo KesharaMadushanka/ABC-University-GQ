@@ -47,7 +47,7 @@ public class loginController extends HttpServlet {
 
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
 
-            pst = con.prepareStatement("SELECT userName,userPwd FROM users WHERE userName =? AND userPwd = ?");
+            pst = con.prepareStatement("SELECT userName,userPwd,userRole FROM users WHERE userName =? AND userPwd = ?");
 
             pst.setString(1, uname);
             pst.setString(2, hashedPassword);
@@ -58,14 +58,14 @@ public class loginController extends HttpServlet {
                 if (Objects.equals(UserAuthorization.authorizeUser(uname), "admin")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
-                    request.setAttribute("message", "Hello " + uname);
+                    session.setAttribute("role", rs.getString("userRole"));
                     response.sendRedirect("admin/admin.jsp");
                     //authorize user privileges
                 } else if (Objects.equals(UserAuthorization.authorizeUser(uname), "user")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("UN", uname);
-                    request.setAttribute("message", "Hello " + uname);
-                    response.sendRedirect("user/userHome.jsp");
+                    session.setAttribute("role", rs.getString("userRole"));
+                    response.sendRedirect("user/user.jsp");
                 }
 
 
