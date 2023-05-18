@@ -10,6 +10,7 @@
     <!-- Link bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/backButton.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Link jquery and Javascript -->
     <script src="js/jquery.js"></script>
@@ -25,7 +26,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="overflow-y: hidden">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
          style="overflow-y: hidden">
-        <a class="navbar-brand brand-logo" href="admin.jsp"><img src="images/navbar-logo.png"
+        <a class="navbar-brand brand-logo" href="admin/admin.jsp"><img src="images/navbar-logo.png"
                                                                  style="width: 200px; height: 50px;"
                                                                  alt="logo"/></a>
     </div>
@@ -63,6 +64,9 @@
 
     </div>
 </nav>
+<a class="back-button" href="ViewDegree">
+    <i class="fas fa-arrow-left"></i> Back
+</a>
 <div class="container"
      style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
     <% if ("true".equals(request.getParameter("subDelFromDeg"))) { %>

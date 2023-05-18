@@ -6,6 +6,7 @@
     <!-- Link bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/backButton.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Link jquery and Javascript -->
     <script src="js/jquery.js"></script>
@@ -59,6 +60,9 @@
 
     </div>
 </nav>
+<a class="back-button" href="ViewUsers">
+    <i class="fas fa-arrow-left"></i> Back
+</a>
 <div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
 
     <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
@@ -93,7 +97,6 @@
                 </div>
                 <div class="form-group mt-2">
                     <input type="submit" value="Update User" name="btnSave" id="btnSave" class="btn btn-success">
-                    <a href="ViewUsers" class="btn btn-danger">Back</a>
                 </div>
             </form>
         </div>

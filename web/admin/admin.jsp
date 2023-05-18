@@ -122,6 +122,18 @@
                         <div class="collapse show" id="degreeCollapse">
                             <ul class="nav flex-column sub-menu">
 
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="addDegree.jsp">Add New Degree</a>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="../ViewDegree" method="get">
+                                        <button class="btn nav-link">Add Subjects To Degree</button>
+                                    </form>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="addSubject.jsp">Add New Subjects</a>
+                                </li>
                                 <li class="nav-item">
                                     <form action="../ViewDegree" method="get">
                                         <button class="btn nav-link">View Degrees</button>
@@ -131,19 +143,6 @@
                                 <li class="nav-item">
                                     <form action="../ViewAllSubject" method="get">
                                         <button class="btn nav-link">View Subjects</button>
-                                    </form>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="addDegree.jsp">Add New Degree</a>
-                                </li>
-                                <li class="nav-item">
-                                    <form action="../ViewDegree" method="get">
-                                        <button class="btn nav-link">Add Subjects</button>
-                                    </form>
-                                </li>
-                                <li class="nav-item">
-                                    <form action="../ViewAllSubject" method="get">
-                                        <button class="btn nav-link">Edit / Remove Subjects</button>
                                     </form>
                                 </li>
                                 <li class="nav-item">

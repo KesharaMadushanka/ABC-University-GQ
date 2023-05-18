@@ -43,6 +43,7 @@ public class registercontroller extends HttpServlet {
 
         Connection con;
         String reply = null;
+        boolean success = false;
         try {
 
             if (!VerifyUnamePwd.verifyUname(userName)) {
@@ -66,6 +67,7 @@ public class registercontroller extends HttpServlet {
                 pst.executeUpdate();
 
                 reply = " Successfully registered. Please login !";
+                success = true;
 
             }
         } catch (NoSuchAlgorithmException | SQLException ex) {
@@ -73,7 +75,8 @@ public class registercontroller extends HttpServlet {
             out.println("<h1> Somthing Went Wrong !!! </h1>");
         }
 
-        request.setAttribute("Message", "Hello " + userName + reply);
+        request.setAttribute("Message", reply);
+        request.setAttribute("success", success);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

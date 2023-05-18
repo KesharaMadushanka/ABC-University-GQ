@@ -53,12 +53,18 @@
                     </div>
                     <br>
                     <%--    display alert if success--%>
-                    <% if (request.getAttribute("Message") != null) { %>
-                    <div class="alert alert-danger" role="alert">
-                        Username or Password Incorrect
+                    <% if (request.getAttribute("Message") != null) {
+                        if (request.getAttribute("success").equals(true)) {%>
+                    <div class="alert alert-success" role="alert">
+                        <%= request.getAttribute("Message")%>
                     </div>
-                    <%
-                        } %>
+                    <% } else { %>
+
+                    <div class="alert alert-danger" role="alert">
+                        <%= request.getAttribute("Message")%>
+                    </div>
+                    <% }
+                    } %>
                     <!-- Email input -->
                     <div class="form-outline mb-4 align-content-center">
                         <br><br>

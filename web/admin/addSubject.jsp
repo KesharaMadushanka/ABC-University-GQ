@@ -13,6 +13,7 @@
 </head>
 <body>
 <%@ include file="../layout/adminNavbar.jsp" %>
+<%@ include file="../layout/backButton.jsp" %>
 <%--    display alert if success--%>
 <% if ("true".equals(request.getParameter("success"))) { %>
 <div class="alert alert-success" role="alert">
@@ -25,7 +26,7 @@
 <%
     } %>
 
-<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;">
+<div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
 
     <div class="card" style="background-color:rgba(255, 255, 255, 0.5)">
         <div class="card-header">
@@ -51,16 +52,12 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="subject_description">Enter Subject Description</label>
-                    <textarea name="subject_description" id="subject_description"
-                              placeholder="Enter Subject Description"
-                              class="form-control">
-                    </textarea>
+                    <textarea name="subject_description" id="subject_description" placeholder="Enter Subject Description" class="form-control"></textarea>
                 </div>
                 <div class="form-group mt-2">
                     <input type="submit" value="Add Subject" name="btnSave" id="btnSave"
-                           class="btn btn-success btn-sm">
-                    <input type="reset" class="btn btn-warning btn-sm">
-                    <a href="home.jsp" class="btn btn-danger btn-sm">Back</a>
+                           class="btn btn-success">
+                    <input type="reset" class="btn btn-warning">
                 </div>
 
 

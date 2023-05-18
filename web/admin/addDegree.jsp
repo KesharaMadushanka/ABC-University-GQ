@@ -17,6 +17,7 @@
 %>
 <body>
 <%@ include file="../layout/adminNavbar.jsp" %>
+<%@ include file="../layout/backButton.jsp" %>
 <div class="container" style="margin-top:80px;background-size:cover;background-position:center;padding: 20px;width: 1000px">
 
     <%--    display alert if success--%>
@@ -64,7 +65,6 @@
                 <div class="form-group mt-2">
                     <input type="submit" value="Add Degree" name="btnSave" id="btnSave" class="btn btn-success">
                     <input type="reset" class="btn btn-warning">
-                    <a href="home.jsp" class="btn btn-danger">Back</a>
                 </div>
 
 
