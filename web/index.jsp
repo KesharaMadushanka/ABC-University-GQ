@@ -55,15 +55,17 @@
                     <%--    display alert if success--%>
                     <% if ("true".equals(request.getParameter("restrict"))) { %>
                     <div class="alert alert-danger" role="alert">
-                    Access Restricted! Please Login Again
+                    Access Restricted! Please Log in Again
                     </div>
                     <%}%>
                     <% if (request.getAttribute("Message") != null) {
-                        if (request.getAttribute("success").equals(true)) {%>
+                        if (request.getAttribute("success") != null) {
+                            if (request.getAttribute("success").equals(true)) {
+                    %>
                     <div class="alert alert-success" role="alert">
                         <%= request.getAttribute("Message")%>
                     </div>
-                    <% } else { %>
+                    <% }} else { %>
 
                     <div class="alert alert-danger" role="alert">
                         <%= request.getAttribute("Message")%>
@@ -74,14 +76,14 @@
                     <div class="form-outline mb-4 align-content-center">
                         <br><br>
                         <input type="text" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Enter Username" name="userName"/>
+                               placeholder="Enter Username"  required name="userName"/>
                         <label class="form-label" for="form3Example3"></label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <input type="password" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Enter Password" name="userPwd"/>
+                               placeholder="Enter Password"  required name="userPwd"/>
                         <label class="form-label" for="form3Example4"></label>
                     </div>
 

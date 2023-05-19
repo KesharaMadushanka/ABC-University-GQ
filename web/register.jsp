@@ -53,33 +53,34 @@
                         <div class="form-group mt-2">
                             <label for="userName"></label>
                             <input type="text" name="userName" id="userName" placeholder="Enter Your Name"
-                                   class="form-control" required="">
+                                   class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="userEmail"></label><input type="email" name="userEmail" id="userEmail"
+                            <label for="userEmail"></label>
+                            <input type="email" name="userEmail" id="userEmail"
                                                                   placeholder="Enter Your Email"
-                                                                  class="form-control">
+                                                                  class="form-control"  required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="password"></label>
                             <input type="password" name="userPwd" id="password" placeholder="Enter Your Password"
-                                   class="form-control">
+                                   class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="confirmPassword"></label>
                             <input type="password" name="userPwdCon" id="confirmPassword"
-                                   placeholder="Enter Your Password"
-                                   class="form-control">
+                                   placeholder="Enter the Same Password to Confirm"
+                                   class="form-control"  required >
                         </div>
                         <div class="form-group mt-2">
                             <label for="userPhone"></label>
                             <input type="text" name="userPhone" id="userPhone" placeholder="Enter Your Phone"
-                                   class="form-control">
+                                   class="form-control"  required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="userNic"></label>
                             <input type="text" name="userNic" id="userNic" placeholder="Enter Your NIC"
-                                   class="form-control">
+                                   class="form-control" required>
                         </div>
                         <div class="form-group mt-2">
                             <input type="submit" name="btnSave" id="btnsave"
