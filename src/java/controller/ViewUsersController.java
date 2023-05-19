@@ -50,6 +50,8 @@ public class ViewUsersController extends HttpServlet {
                 // Add the user to the list
                 userList.add(user);
             }
+            con.close();
+            pst.close();
             // Set the list as a request attribute
             request.setAttribute("users", userList);
             // Forward the request to viewUser.jsp

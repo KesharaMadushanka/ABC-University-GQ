@@ -67,7 +67,6 @@ public class DashboardDetails {
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM users WHERE userRole = 'user'");
             rs = pst.executeQuery();
-
             if (rs.next()) {
                 return rs.getInt("count");
             } else {

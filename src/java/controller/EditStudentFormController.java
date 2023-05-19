@@ -39,7 +39,8 @@ public class EditStudentFormController extends HttpServlet {
                 request.setAttribute("studentPhone", rs.getString("student_phone"));
                 request.setAttribute("studentNic", rs.getString("student_nic"));
             }
-
+            conn.close();
+            pst.close();
             request.getRequestDispatcher("admin/editStudent.jsp").forward(request, response);
 
         } catch (SQLException e) {

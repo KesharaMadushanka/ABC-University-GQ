@@ -33,6 +33,8 @@ public class AddStudentController extends HttpServlet {
             pst.setString(4,studentNic);
             pst.executeUpdate();
 
+            conn.close();
+            pst.close();
             response.sendRedirect(request.getContextPath() + "/admin/addStudent.jsp?success=true");
 
 

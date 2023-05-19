@@ -40,7 +40,8 @@ public class EditSubjectController extends HttpServlet {
             pst.setInt(3, Integer.parseInt(subjectCredits));
             pst.setString(4, subjectCode);
             pst.executeUpdate();
-
+            con.close();
+            pst.close();
         } catch (SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }

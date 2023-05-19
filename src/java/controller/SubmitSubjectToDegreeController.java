@@ -35,6 +35,8 @@ public class SubmitSubjectToDegreeController extends HttpServlet {
                 // Execute SQL statement
                 pst.executeUpdate();
             }
+            conn.close();
+            pst.close();
             response.sendRedirect("ViewSubject?&degreeCode="+degreeCode+"&degreeName="+degreeName+"&success=true");
 
         } catch (SQLException e) {

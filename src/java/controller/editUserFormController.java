@@ -40,7 +40,8 @@ public class editUserFormController extends HttpServlet {
                 request.setAttribute("phone", rs.getString("userPhone"));
                 request.setAttribute("nic", rs.getString("userNic"));
             }
-
+            con.close();
+            pst.close();
             request.getRequestDispatcher("admin/editUser.jsp").forward(request, response);
 
         } catch (SQLException | ServletException e) {

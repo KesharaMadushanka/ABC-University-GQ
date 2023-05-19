@@ -38,7 +38,8 @@ public class ViewDegreeController extends HttpServlet {
                 degree.setDegreeDescription(rs.getString("degree_description"));
                 degrees.add(degree);
             }
-
+            con.close();
+            stmt.close();
             request.setAttribute("degrees", degrees);
             request.getRequestDispatcher("admin/viewDegree.jsp").forward(request, response);
 

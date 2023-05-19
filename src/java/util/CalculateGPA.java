@@ -33,6 +33,29 @@ public class CalculateGPA {
 
     }
 
+    public static int getTotGP(String studentNumber) {
+        Connection conn;
+        PreparedStatement pst;
+
+        String sql = "SELECT SUM(grade_point_value) AS total_grade_points FROM student_subject WHERE student_number = ?";
+        try {
+            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, studentNumber);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt("total_grade_points");
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
     public static double getGPA(int totalCredits, double gradePointValue) {
         if (isNaN(gradePointValue)){
             return 0;

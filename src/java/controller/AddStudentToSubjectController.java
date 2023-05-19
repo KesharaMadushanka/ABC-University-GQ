@@ -1,7 +1,7 @@
 package controller;
 
-import util.DatabaseConnection;
 import bean.Student;
+import util.DatabaseConnection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,31 +21,31 @@ import java.util.List;
 public class AddStudentToSubjectController extends HttpServlet {
 
     Connection con;
-    PreparedStatement subjectNameStmt,studentStmt,subjectStudentStmt;
+    PreparedStatement subjectNameStmt, studentStmt, subjectStudentStmt;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String subjectCode = request.getParameter("subjectCode");
-        String subjectName;
+        String subjectName = "No Subject Found";
+        String subjectAvailable = "false";
 
         try {
             con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
 
-            String getSubjectNameSql = "SELECT subject_name FROM subject WHERE subject_code = ?";
+            String getSubjectNameSql = "SELECT subject_name,COUNT(*) AS count FROM subject WHERE subject_code = ?";
             String getAllStudentsExcludingExistSql = "SELECT id,student_number,student_name FROM student WHERE student_number " +
                     "NOT IN (SELECT student_number FROM student_subject WHERE subject_code = ?); ";
             String getAlreadyEnrolledStudents = "SELECT * FROM student WHERE student_number IN " +
                     "(SELECT student_number FROM student_subject WHERE subject_code = ?); ";
 
 
-
             subjectNameStmt = con.prepareStatement(getSubjectNameSql);
             subjectNameStmt.setString(1, subjectCode);
             ResultSet subjectRs = subjectNameStmt.executeQuery();
-//            subjectName = subjectRs.getString("subject_name");
+
 
             studentStmt = con.prepareStatement(getAllStudentsExcludingExistSql);
-            studentStmt.setString(1,subjectCode);
+            studentStmt.setString(1, subjectCode);
             ResultSet studentRs = studentStmt.executeQuery();
 
             subjectStudentStmt = con.prepareStatement(getAlreadyEnrolledStudents);
@@ -55,7 +55,7 @@ public class AddStudentToSubjectController extends HttpServlet {
             List<Student> allStudents = new ArrayList<>();
             List<Student> subjectStudents = new ArrayList<>();
 
-            while(studentRs.next()) {
+            while (studentRs.next()) {
                 Student allStudent = new Student();
                 allStudent.setId(studentRs.getInt("id"));
                 allStudent.setNumber(studentRs.getString("student_number"));
@@ -63,7 +63,7 @@ public class AddStudentToSubjectController extends HttpServlet {
                 allStudents.add(allStudent);
             }
 
-            while (stSub.next()){
+            while (stSub.next()) {
                 Student subjectStudent = new Student();
                 subjectStudent.setId(stSub.getInt("id"));
                 subjectStudent.setNumber(stSub.getString("student_number"));
@@ -72,10 +72,22 @@ public class AddStudentToSubjectController extends HttpServlet {
 
             }
 
+            if (subjectRs.next()) {
+                int rowCount = subjectRs.getInt(2);
+                if (rowCount > 0) {
+                    subjectName = subjectRs.getString("subject_name");
+                    subjectAvailable = "true";
+                }
+            }
+
 //            request.setAttribute("subjectName" , subjectName);
-            request.setAttribute("allStudents" , allStudents);
-            request.setAttribute("subjectStudents",subjectStudents);
-            request.setAttribute("subjectCode",subjectCode);
+            request.setAttribute("allStudents", allStudents);
+            request.setAttribute("subjectStudents", subjectStudents);
+            request.setAttribute("subjectCode", subjectCode);
+            request.setAttribute("subjectName", subjectName);
+            request.setAttribute("subjectAvailable", subjectAvailable);
+
+            con.close();
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("user/viewSubjects.jsp");
             dispatcher.forward(request, response);

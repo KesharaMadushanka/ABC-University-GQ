@@ -48,6 +48,9 @@ public class ViewSubjectController extends HttpServlet {
                 subjects.add(subject);
 
             }
+            conn.close();
+            pst.close();
+
             req.setAttribute("subjects", subjects);
             req.setAttribute("degreeName", degreeName);
             req.setAttribute("degreeCode", degreeCode);

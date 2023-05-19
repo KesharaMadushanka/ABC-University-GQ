@@ -48,7 +48,8 @@ public class StudentSemResultController extends HttpServlet {
                 studentResults.add(studentResult);
 
             }
-
+            conn.close();
+            pst.close();
             // Set the list as a request attribute
             request.setAttribute("results", studentResults);
             // Forward the request to viewUser.jsp

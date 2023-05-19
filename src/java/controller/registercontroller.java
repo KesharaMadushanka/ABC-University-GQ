@@ -68,8 +68,10 @@ public class registercontroller extends HttpServlet {
 
                 reply = " Successfully registered. Please login !";
                 success = true;
-
+                con.close();
+                pst.close();
             }
+
         } catch (NoSuchAlgorithmException | SQLException ex) {
             Logger.getLogger(registercontroller.class.getName()).log(Level.SEVERE, null, ex);
             out.println("<h1> Somthing Went Wrong !!! </h1>");

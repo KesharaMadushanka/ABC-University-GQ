@@ -38,6 +38,8 @@ public class SubmitStudentToSubjectController extends HttpServlet {
                 // Execute SQL statement
                 pst.executeUpdate();
             }
+            conn.close();
+            pst.close();
             response.sendRedirect("ViewEnrolledStudents?subjectCode="+subjectCode);
 
         } catch (SQLException e) {

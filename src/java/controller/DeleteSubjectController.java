@@ -42,7 +42,8 @@ public class DeleteSubjectController extends HttpServlet {
                 pst = con.prepareStatement("DELETE FROM subject WHERE subject_code = ?");
                 pst.setString(1, subjectCode);
                 pst.executeUpdate();
-
+                con.close();
+                pst.close();
                 response.sendRedirect(request.getContextPath() + "/ViewAllSubject?subDel=true");
             }
 

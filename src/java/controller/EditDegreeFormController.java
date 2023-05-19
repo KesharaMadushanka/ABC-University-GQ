@@ -39,7 +39,8 @@ public class EditDegreeFormController extends HttpServlet {
                 request.setAttribute("degreeDescription", rs.getString("degree_description"));
                 request.setAttribute("degreeDuration", Integer.toString(rs.getInt("degree_duration")));
                 request.setAttribute("degreeCredits", Integer.toString(rs.getInt("degree_credits")));
-
+                con.close();
+                pst.close();
 
             }
 

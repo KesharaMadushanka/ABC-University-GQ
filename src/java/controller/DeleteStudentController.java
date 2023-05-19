@@ -28,7 +28,8 @@ public class DeleteStudentController extends HttpServlet {
             pst = conn.prepareStatement("DELETE FROM student WHERE id = ?");
             pst.setInt(1, Integer.parseInt(studentId));
             pst.executeUpdate();
-
+            conn.close();
+            pst.close();
             response.sendRedirect(request.getContextPath() + "/ViewStudents?success=true");
 
         } catch (SQLException e) {

@@ -32,6 +32,8 @@ public class DeleteDegreeController extends HttpServlet {
             pst.setString(1, degreeCode);
             pst.executeUpdate();
 
+            con.close();
+            pst.close();
 
         } catch (SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");

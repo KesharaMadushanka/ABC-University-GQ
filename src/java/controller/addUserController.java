@@ -51,6 +51,9 @@ public class addUserController extends HttpServlet {
             pst.executeUpdate();
 
 
+            con.close();
+            pst.close();
+
         } catch (NoSuchAlgorithmException | SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }

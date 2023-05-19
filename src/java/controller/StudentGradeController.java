@@ -42,7 +42,8 @@ public class StudentGradeController extends HttpServlet {
                 subjectStudent.setGrade(resultSet.getString("grade"));
                 subjectStudents.add(subjectStudent);
             }
-
+            con.close();
+            statement.close();
             request.setAttribute("students", subjectStudents);
             request.setAttribute("subjectCode", subjectCode);
             request.getRequestDispatcher("user/studentGrade.jsp").forward(request, response);

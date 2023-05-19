@@ -43,7 +43,8 @@ public class EditDegreeController extends HttpServlet {
             pst.setInt(4, Integer.parseInt (degreeCredits));
             pst.setString(5, degreeCode);
             pst.executeUpdate();
-
+            con.close();
+            pst.close();
         } catch (SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }

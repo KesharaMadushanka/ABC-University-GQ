@@ -38,7 +38,8 @@ public class EditSubjectsControllerForm extends HttpServlet {
                 request.setAttribute("subjectDescription", rs.getString("subject_description"));
                 request.setAttribute("subjectCredits", Integer.toString(rs.getInt("subject_credits")));
             }
-
+            con.close();
+            pst.close();
             request.getRequestDispatcher("admin/editSubject.jsp").forward(request, response);
 
 

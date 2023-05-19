@@ -70,10 +70,11 @@ public class loginController extends HttpServlet {
 
 
             } else {
-                request.setAttribute("Message", "error");
+                request.setAttribute("Message", "User Name or Password Incorrect");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
-
+            con.close();
+            pst.close();
         } catch (NoSuchAlgorithmException | SQLException ex) {
             Logger.getLogger(registercontroller.class.getName()).log(Level.SEVERE, null, ex);
             out.println("<h1> Something Went Wrong !!! </h1>");

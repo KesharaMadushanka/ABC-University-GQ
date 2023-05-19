@@ -35,7 +35,8 @@ public class EditStudentController extends HttpServlet {
             pst.setString(4,studentNic);
             pst.setInt(5, Integer.parseInt(studentId));
             pst.executeUpdate();
-
+            con.close();
+            pst.close();
             response.sendRedirect(request.getContextPath() + "/ViewStudents?editSuccess=true");
 
         } catch (SQLException e) {

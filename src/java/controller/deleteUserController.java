@@ -35,7 +35,8 @@ public class deleteUserController extends HttpServlet {
             pst.setInt(1, Integer.parseInt(userId));
             pst.executeUpdate();
 
-
+            con.close();
+            pst.close();
         } catch (SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }

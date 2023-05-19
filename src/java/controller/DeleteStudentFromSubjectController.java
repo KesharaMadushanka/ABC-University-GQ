@@ -29,6 +29,9 @@ public class DeleteStudentFromSubjectController extends HttpServlet {
             pst.setString(2,subjectCode);
             pst.executeUpdate();
 
+            conn.close();
+            pst.close();
+
             response.sendRedirect(request.getContextPath() + "/ViewEnrolledStudents?subjectCode="+subjectCode+"&success=true");
 
         } catch (SQLException e) {

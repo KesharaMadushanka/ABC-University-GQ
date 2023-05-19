@@ -42,7 +42,8 @@ public class editUserController extends HttpServlet {
             pst.setString(4,userNic);
             pst.setInt(5, Integer.parseInt(userId));
             pst.executeUpdate();
-
+            con.close();
+            pst.close();
         } catch (SQLException ex) {
             out.println("<h1> Something Went Wrong !!! </h1>");
         }

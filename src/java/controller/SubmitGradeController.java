@@ -72,8 +72,9 @@ public class SubmitGradeController extends HttpServlet {
                     if (CheckGPA.isAllGraded(paramName)) {
                         //total credits for each student
                         int totalCredits = CalculateGPA.getTotalCredits(paramName);
+                        int gp = CalculateGPA.getTotGP(paramName);
                         //calculate the GPA
-                        double gpa = CalculateGPA.getGPA(totalCredits, gradePointValue);
+                        double gpa = CalculateGPA.getGPA(totalCredits, gp);
                         if (!isNaN(gpa)){
                             //save GPA in the db
                             gpaSt = conn.prepareStatement("UPDATE student_gpa SET gpa = ? WHERE student_number = ?");
@@ -88,7 +89,8 @@ public class SubmitGradeController extends HttpServlet {
                 }
             }
 
-
+            conn.close();
+            pst.close();
             // redirect to a success page
             response.sendRedirect(request.getContextPath() + "/StudentGrade?success=true&subjectCode=" + subjectCode);
 

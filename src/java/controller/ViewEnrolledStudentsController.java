@@ -46,7 +46,8 @@ public class ViewEnrolledStudentsController extends HttpServlet {
                 studentSubjects.add(studentSubject);
 
             }
-
+            conn.close();
+            pst.close();
             request.setAttribute("studentSubjects", studentSubjects);
             request.setAttribute("subjectCode", subjectCode);
             RequestDispatcher dispatcher = request.getRequestDispatcher("user/viewEnrolledStudents.jsp");
