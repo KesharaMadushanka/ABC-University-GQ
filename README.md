@@ -19,7 +19,7 @@ The University Management System is a web-based application that serves two main
 
 ### Reports
 
-####The system provides two types of reports:
+#### The system provides two types of reports:
 
   1. Individual Student Semester Result Sheet
   2. Final Result Sheet including overall GP
