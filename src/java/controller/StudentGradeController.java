@@ -25,7 +25,7 @@ public class StudentGradeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             String subjectCode = request.getParameter("subjectCode");
             String query = "SELECT student.student_number, student.student_name, student_subject.grade FROM student " +
                     "INNER JOIN student_subject ON student.student_number = student_subject.student_number " +

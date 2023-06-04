@@ -6,8 +6,12 @@ import java.sql.SQLException;
 
 
 public class DatabaseConnection {
+    private static final String url = "jdbc:mysql://localhost/abc_university_q";
+    private static final String username = "root";
+    private static final String password = "";
 
-    public static Connection connectToDatabase(String url, String username, String password)
+
+    public static Connection connectToDatabase()
             throws SQLException {
         Connection connection = null;
 

@@ -29,7 +29,7 @@ public class ViewSubjectController extends HttpServlet {
         PreparedStatement pst;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             String subSql = "SELECT * FROM subject JOIN degree_subject ON subject.subject_code = degree_subject.subject_code " +
                     "WHERE degree_subject.degree_code = ?; ";
 

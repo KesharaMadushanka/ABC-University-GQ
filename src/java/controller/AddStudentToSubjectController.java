@@ -30,7 +30,7 @@ public class AddStudentToSubjectController extends HttpServlet {
         String subjectAvailable = "false";
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             String getSubjectNameSql = "SELECT subject_name,COUNT(*) AS count FROM subject WHERE subject_code = ?";
             String getAllStudentsExcludingExistSql = "SELECT id,student_number,student_name FROM student WHERE student_number " +

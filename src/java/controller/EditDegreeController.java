@@ -34,7 +34,7 @@ public class EditDegreeController extends HttpServlet {
 
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("UPDATE degree SET degree_name = ?, degree_description = ?, degree_duration = ?, degree_credits = ? WHERE degree_code = ?");
             pst.setString(1, degreeName);

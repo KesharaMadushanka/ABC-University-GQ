@@ -45,7 +45,7 @@ public class loginController extends HttpServlet {
             //hash input password
             String hashedPassword = PasswordHasher.hashPassword(pwd);
 
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("SELECT userName,userPwd,userRole FROM users WHERE userName =? AND userPwd = ?");
 

@@ -10,7 +10,7 @@ public class VerifyUnamePwd {
         Connection con;
         PreparedStatement unameStatement;
 
-        con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+        con = DatabaseConnection.connectToDatabase();
         unameStatement = con.prepareStatement("SELECT COUNT(*) FROM users WHERE userName=?");
         //run username check query
         unameStatement.setString(1, uname);
@@ -26,7 +26,7 @@ public class VerifyUnamePwd {
         Connection con;
         PreparedStatement uemailStatement;
 
-        con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+        con = DatabaseConnection.connectToDatabase();
         uemailStatement = con.prepareStatement("SELECT COUNT(*) FROM users WHERE userEmail=?");
         //run username check query
         uemailStatement.setString(1, uemail);

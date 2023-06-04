@@ -32,7 +32,7 @@ public class ViewUsersController extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             // Execute the SELECT query
             pst = con.prepareStatement("SELECT * FROM users");

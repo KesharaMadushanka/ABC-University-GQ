@@ -12,7 +12,7 @@ public class CheckGPA {
             PreparedStatement pst;
             ResultSet rs;
 
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("SELECT grade FROM student_subject WHERE student_number = ? AND grade = ''");
             pst.setString(1, studentNumber);
             rs = pst.executeQuery();

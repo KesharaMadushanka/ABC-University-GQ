@@ -24,7 +24,7 @@ public class ViewDegreeController extends HttpServlet {
 
 
         try {
-            Connection con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            Connection con = DatabaseConnection.connectToDatabase();
             String sql = "SELECT * FROM degree";
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();

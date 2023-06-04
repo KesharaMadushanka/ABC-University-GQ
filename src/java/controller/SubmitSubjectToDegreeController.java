@@ -26,7 +26,7 @@ public class SubmitSubjectToDegreeController extends HttpServlet {
 
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("INSERT INTO degree_subject(degree_code,subject_code) VALUES (?,?)");
             for (String subjectCode : subjectCodes) {
                 // Set parameters for SQL statement

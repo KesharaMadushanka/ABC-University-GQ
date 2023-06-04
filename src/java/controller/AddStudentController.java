@@ -24,7 +24,7 @@ public class AddStudentController extends HttpServlet {
         PreparedStatement pst;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             //insert data into student table
             pst = conn.prepareStatement("INSERT INTO student(student_name,student_email,student_phone,student_nic) VALUES (?,?,?,?)");
             pst.setString(1,studentName);

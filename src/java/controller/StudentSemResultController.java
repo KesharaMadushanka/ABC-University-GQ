@@ -28,7 +28,7 @@ public class StudentSemResultController extends HttpServlet {
         String studentNumber = request.getParameter("studentNumber");
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("SELECT s.student_number, s.student_name, su.subject_code, su.subject_name, ss.grade, sg.gpa " +
                     "FROM student s JOIN student_subject ss ON s.student_number = ss.student_number JOIN subject su " +
                     "ON ss.subject_code = su.subject_code JOIN student_gpa sg ON s.student_number = sg.student_number " +

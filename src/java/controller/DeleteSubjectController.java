@@ -29,7 +29,7 @@ public class DeleteSubjectController extends HttpServlet {
         String degreeName = request.getParameter("degreeName");
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             if (degreeCode != null){
                 pst = con.prepareStatement("DELETE FROM degree_subject WHERE subject_code = ? AND degree_code = ? ");

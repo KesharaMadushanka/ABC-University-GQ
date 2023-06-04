@@ -54,7 +54,7 @@ public class registercontroller extends HttpServlet {
 
 
                 String hashedPassword = PasswordHasher.hashPassword(userPwd);
-                con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+                con = DatabaseConnection.connectToDatabase();
                 String insertQuery = "INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)";
                 PreparedStatement pst = con.prepareStatement(insertQuery);
 
@@ -74,7 +74,7 @@ public class registercontroller extends HttpServlet {
 
         } catch (NoSuchAlgorithmException | SQLException ex) {
             Logger.getLogger(registercontroller.class.getName()).log(Level.SEVERE, null, ex);
-            out.println("<h1> Somthing Went Wrong !!! </h1>");
+            out.println("<h1> Something Went Wrong !!! </h1>");
         }
 
         request.setAttribute("Message", reply);

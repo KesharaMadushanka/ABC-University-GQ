@@ -27,7 +27,7 @@ public class EditDegreeFormController extends HttpServlet {
         String degreeCode = request.getParameter("degreeCode");
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("SELECT * FROM degree WHERE degree_code = ?");
             pst.setString(1, degreeCode);

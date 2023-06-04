@@ -26,7 +26,7 @@ public class ViewStudentController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("SELECT * FROM student");
             ResultSet rs = pst.executeQuery();

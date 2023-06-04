@@ -30,7 +30,7 @@ public class ViewEnrolledStudentsController extends HttpServlet {
         String subjectCode = request.getParameter("subjectCode");
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("SELECT student.id, student.student_number, student.student_name " +
                     "FROM student INNER JOIN student_subject ON student.student_number = student_subject.student_number" +
                     " WHERE student_subject.subject_code = ? ");

@@ -30,7 +30,7 @@ public class AddDegreeController extends HttpServlet {
         PreparedStatement pstmt = null;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
 
             String sql = "INSERT INTO degree (degree_code, degree_name, degree_duration, degree_credits, degree_description) VALUES (?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);

@@ -23,7 +23,7 @@ public class DeleteStudentFromSubjectController extends HttpServlet {
         String studentNumber = request.getParameter("studentNumber");
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("DELETE FROM student_subject WHERE student_number = ? AND subject_code = ?");
             pst.setString(1, studentNumber);
             pst.setString(2,subjectCode);

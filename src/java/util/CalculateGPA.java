@@ -39,7 +39,7 @@ public class CalculateGPA {
 
         String sql = "SELECT SUM(grade_point_value) AS total_grade_points FROM student_subject WHERE student_number = ?";
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement(sql);
             pst.setString(1, studentNumber);
             ResultSet rs = pst.executeQuery();
@@ -76,7 +76,7 @@ public class CalculateGPA {
                 "FROM subject s JOIN student_subject ss ON s.subject_code " +
                 "= ss.subject_code WHERE ss.student_number = ? ";
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement(sql);
             pst.setString(1, studentNumber);
             ResultSet rs = pst.executeQuery();

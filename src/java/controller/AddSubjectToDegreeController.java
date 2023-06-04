@@ -30,7 +30,7 @@ public class AddSubjectToDegreeController extends HttpServlet {
         PreparedStatement pst1 = null,pst2 = null;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
         } catch (SQLException e) {
             e.printStackTrace();
         }

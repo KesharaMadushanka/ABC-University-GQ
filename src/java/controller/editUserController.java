@@ -33,7 +33,7 @@ public class editUserController extends HttpServlet {
 
         Connection con;
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("UPDATE users SET userName = ?, userEmail = ?, userPhone = ?, userNic = ? WHERE id = ?");
             pst.setString(1, userName);

@@ -26,7 +26,7 @@ public class EditStudentFormController extends HttpServlet {
 
         try {
 
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("SELECT * FROM student WHERE id = ?");
             pst.setInt(1, Integer.parseInt(studentId));
             rs = pst.executeQuery();

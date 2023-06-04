@@ -26,7 +26,7 @@ public class DeleteDegreeController extends HttpServlet {
 
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("DELETE FROM degree WHERE degree_code = ? ");
             pst.setString(1, degreeCode);

@@ -14,7 +14,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student_gpa WHERE gpa >= 3.70");
             rs = pst.executeQuery();
 
@@ -37,7 +37,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student_gpa WHERE gpa >= 3");
             rs = pst.executeQuery();
 
@@ -60,7 +60,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student_subject WHERE grade != ''");
             rs = pst.executeQuery();
 
@@ -82,7 +82,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student_subject WHERE grade = ''");
             rs = pst.executeQuery();
 
@@ -105,7 +105,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student WHERE student_number " +
                     "NOT IN ( SELECT student_number FROM student_subject );");
             rs = pst.executeQuery();
@@ -128,7 +128,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM student WHERE student_number " +
                     "IN ( SELECT student_number FROM student_subject );");
             rs = pst.executeQuery();
@@ -151,7 +151,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT subject_name FROM subject WHERE subject_code = " +
                     "( SELECT subject_code FROM student_subject WHERE grade = 'F' GROUP BY subject_code ORDER BY COUNT(*) " +
                     "DESC LIMIT 1 ); ");
@@ -176,7 +176,7 @@ public class UserDashboardDetails {
         ResultSet rs;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT COUNT(*) AS count FROM " +
                     "(SELECT subject_name FROM subject WHERE subject_code = " +
                     "(SELECT subject_code FROM student_subject WHERE grade = 'F' " +

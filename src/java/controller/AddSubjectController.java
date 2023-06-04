@@ -26,7 +26,7 @@ public class AddSubjectController extends HttpServlet {
         PreparedStatement pst = null;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
 
             String sql = "INSERT INTO subject (subject_code, subject_name, subject_credits, subject_description) VALUES (?, ?, ?, ?)";
             pst = conn.prepareStatement(sql);

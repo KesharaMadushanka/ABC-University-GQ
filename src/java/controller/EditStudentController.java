@@ -26,7 +26,7 @@ public class EditStudentController extends HttpServlet {
         String studentNic = request.getParameter("studentNic");
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("UPDATE student SET student_name = ?, student_email = ?, student_phone = ?, student_nic = ? " +
                     "WHERE id = ?");
             pst.setString(1, studentName);

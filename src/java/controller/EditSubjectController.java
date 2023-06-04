@@ -32,7 +32,7 @@ public class EditSubjectController extends HttpServlet {
 
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("UPDATE subject SET subject_name = ?, subject_description = ?, subject_credits = ? WHERE subject_code = ?");
             pst.setString(1, subjectName);

@@ -12,7 +12,7 @@ public class UserAuthorization {
         PreparedStatement pst;
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT userRole FROM users WHERE username = ?");
             pst.setString(1, username);
             ResultSet rs = pst.executeQuery();

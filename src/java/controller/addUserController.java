@@ -39,7 +39,7 @@ public class addUserController extends HttpServlet {
         try {
             String hashedPassword = PasswordHasher.hashPassword(userPwd);
 
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
 
             pst = con.prepareStatement("INSERT INTO users(userName,userEmail,userPhone,userNic,userPwd) VALUES (?,?,?,?,?)");
 

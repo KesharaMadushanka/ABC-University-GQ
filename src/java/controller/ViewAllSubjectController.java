@@ -30,7 +30,7 @@ public class ViewAllSubjectController extends HttpServlet {
         PreparedStatement pst;
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             String sql = "SELECT * FROM subject ";
 
             //execute view subject query

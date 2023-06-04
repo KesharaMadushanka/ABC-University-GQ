@@ -27,7 +27,7 @@ public class EditSubjectsControllerForm extends HttpServlet {
         String subjectCode = request.getParameter("subjectCode");
 
         try {
-            con = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            con = DatabaseConnection.connectToDatabase();
             pst = con.prepareStatement("SELECT * FROM subject WHERE subject_code = ?");
             pst.setString(1, subjectCode);
             rs = pst.executeQuery();

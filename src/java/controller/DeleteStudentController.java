@@ -24,7 +24,7 @@ public class DeleteStudentController extends HttpServlet {
         String studentId = request.getParameter("studentId");
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("DELETE FROM student WHERE id = ?");
             pst.setInt(1, Integer.parseInt(studentId));
             pst.executeUpdate();

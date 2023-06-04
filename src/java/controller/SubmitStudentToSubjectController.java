@@ -29,7 +29,7 @@ public class SubmitStudentToSubjectController extends HttpServlet {
 
 
         try {
-            conn = DatabaseConnection.connectToDatabase("jdbc:mysql://localhost/abc_university_q", "root", "");
+            conn = DatabaseConnection.connectToDatabase();
             pst = conn.prepareStatement("INSERT INTO student_subject (student_number,subject_code) VALUES (?,?)");
             for (String studentCode : studentCodes) {
                 // Set parameters for SQL statement
