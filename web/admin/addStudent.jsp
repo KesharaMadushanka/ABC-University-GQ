@@ -46,22 +46,22 @@
             <form action="../AddStudent" method="post">
                 <div class="form-group mt-2">
                     <label for="studentName">Enter Student Name</label>
-                    <input type="text" name="studentName" id="studentName" placeholder="Enter Your Name" class="form-control"
+                    <input type="text" name="studentName" id="studentName" placeholder="Enter Student Name" class="form-control"
                            required="">
                 </div>
                 <div class="form-group mt-2">
                     <label for="studentEmail">Enter Student Email Address</label>
-                    <input type="email" name="studentEmail" id="studentEmail" placeholder="Enter Your Email"
+                    <input type="email" name="studentEmail" id="studentEmail" placeholder="Enter Student Email"
                            class="form-control">
                 </div>
                 <div class="form-group mt-2">
                     <label for="studentPhone">Enter Student Contact Number</label>
-                    <input type="text" name="studentPhone" id="studentPhone" placeholder="Enter Your Phone"
+                    <input type="text" name="studentPhone" id="studentPhone" placeholder="Enter Student Phone"
                            class="form-control">
                 </div>
                 <div class="form-group mt-2">
                     <label for="studentNic">Enter Student NIC Number</label>
-                    <input type="text" name="studentNic" id="studentNic" placeholder="Enter Your NIC" class="form-control">
+                    <input type="text" name="studentNic" id="studentNic" placeholder="Enter Student NIC" class="form-control">
                 </div>
                 <div class="form-group mt-2">
                     <input type="submit" value="Add User" name="btnSave" id="btnSave" class="btn btn-success">

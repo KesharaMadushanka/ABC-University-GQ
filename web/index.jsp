@@ -9,6 +9,7 @@
     <!-- Link bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Link jquery and Javascript -->
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -55,7 +56,7 @@
                     <%--    display alert if success--%>
                     <% if ("true".equals(request.getParameter("restrict"))) { %>
                     <div class="alert alert-danger" role="alert">
-                    Access Restricted! Please Log in Again
+                        Access Restricted! Please Log in Again
                     </div>
                     <%}%>
                     <% if (request.getAttribute("Message") != null) {
@@ -65,7 +66,14 @@
                     <div class="alert alert-success" role="alert">
                         <%= request.getAttribute("Message")%>
                     </div>
-                    <% }} else { %>
+                    <%
+                    } else if (request.getAttribute("success").equals(false)) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= request.getAttribute("Message")%>
+                    </div>
+
+                    <% }
+                    } else { %>
 
                     <div class="alert alert-danger" role="alert">
                         <%= request.getAttribute("Message")%>
@@ -76,14 +84,14 @@
                     <div class="form-outline mb-4 align-content-center">
                         <br><br>
                         <input type="text" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Enter Username"  required name="userName"/>
+                               placeholder="Enter Username" required name="userName"/>
                         <label class="form-label" for="form3Example3"></label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <input type="password" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Enter Password"  required name="userPwd"/>
+                               placeholder="Enter Password" required name="userPwd"/>
                         <label class="form-label" for="form3Example4"></label>
                     </div>
 

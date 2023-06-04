@@ -38,27 +38,27 @@
         <div class="card-body">
             <form action="../addUsers" method="post">
                 <div class="form-group mt-2">
-                    <label for="userName">Enter Your Name</label>
+                    <label for="userName">Enter Name</label>
                     <input type="text" name="userName" id="userName" placeholder="Enter Your Name" class="form-control"
                            required="">
                 </div>
                 <div class="form-group mt-2">
-                    <label for="userEmail">Enter Your Email Address</label>
+                    <label for="userEmail">Enter Email Address</label>
                     <input type="email" name="userEmail" id="userEmail" placeholder="Enter Your Email"
                            class="form-control">
                 </div>
                 <div class="form-group mt-2">
-                    <label for="userPwd">Please Enter Your Password</label>
+                    <label for="userPwd">Enter Temporary Password</label>
                     <input type="password" name="userPwd" id="userPwd" placeholder="Enter Your Password"
                            class="form-control">
                 </div>
                 <div class="form-group mt-2">
-                    <label for="userPhone">Please Enter Your Phone Number</label>
+                    <label for="userPhone">Enter Phone Number</label>
                     <input type="text" name="userPhone" id="userPhone" placeholder="Enter Your Phone"
                            class="form-control">
                 </div>
                 <div class="form-group mt-2">
-                    <label for="userNic">Please Enter Your NIC Number</label>
+                    <label for="userNic">Enter NIC Number</label>
                     <input type="text" name="userNic" id="userNic" placeholder="Enter Your NIC" class="form-control">
                 </div>
                 <div class="form-group mt-2">
